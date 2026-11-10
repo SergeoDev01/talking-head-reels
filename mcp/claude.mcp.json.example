@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "pixabay": {
+      "command": "npx",
+      "args": ["-y", "pixabay-mcp@latest"],
+      "env": {
+        "PIXABAY_API_KEY": "REPLACE_WITH_YOUR_PIXABAY_API_KEY"
+      }
+    },
+    "thesvg": {
+      "command": "npx",
+      "args": ["-y", "@thesvg/mcp-server"]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+// OpenCode V2 — global config example.
+// Copy the "mcp" block into ~/.config/opencode/opencode.jsonc
+// (Windows: %USERPROFILE%\.config\opencode\opencode.jsonc).
+//
+// The Pixabay key is read from the environment, never written here:
+//   macOS/Linux:  export PIXABAY_API_KEY="your-key"   (add to ~/.zshrc)
+//   Windows:      setx PIXABAY_API_KEY "your-key"      (then reopen the terminal)
+//
+// Windows note: if `npx` is not found, use
+//   "command": ["cmd.exe", "/d", "/c", "npx", "-y", "pixabay-mcp@latest"]
+// and the same for thesvg.
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "pixabay": {
+        "type": "local",
+        "command": ["npx", "-y", "pixabay-mcp@latest"],
+        "environment": {
+          "PIXABAY_API_KEY": "{env:PIXABAY_API_KEY}"
+        }
+      },
+      "thesvg": {
+        "type": "local",
+        "command": ["npx", "-y", "@thesvg/mcp-server"]
+      }
+    }
+  }
+}

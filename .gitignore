@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Build outputs / local projects
+render/
+qa/
+*.mp4
+*.mov
+*.wav
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backups
+*.bak
+*.zip
