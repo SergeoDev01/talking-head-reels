@@ -17,6 +17,7 @@
 4. [Installer le skill](#4-installer-le-skill)
 5. [Installer les MCP utilisés par le skill](#5-installer-les-mcp-utilisés-par-le-skill)
 6. [Utilisation complète](#6-utilisation-complète)
+Démo. [Démo (avant/après)](#demo-avantaprès)
 7. [Structure du dépôt](#7-structure-du-dépôt)
 8. [Sources gratuites, licences et attribution](#8-sources-gratuites-licences-et-attribution)
 9. [Dépannage](#9-dépannage)
@@ -552,6 +553,25 @@ DIR/
 │   └── ma_video_v1.mp4      # 1080×1920, H.264, AAC
 └── CREDITS.md               # sources + licences (à tenir à jour)
 ```
+
+---
+
+## Démo (avant/après)
+
+Voici un exemple concret de ce que le skill produit, à partir d'une vidéo source face caméra.
+
+| | Fichier | Description |
+|---|---|---|
+| **Avant (source)** | [`assets/demos/original.mp4`](assets/demos/original.mp4) | Vidéo originale brute (face caméra, pauses et hésitations incluses) |
+| **Après (skill)** | [`assets/demos/result.mp4`](assets/demos/result.mp4) | Reel 9:16 rendu par le skill : pauses coupées, sous-titres kinétiques, B-roll, splits, audio masterisé à −14 LUFS |
+
+**Spécifications du rendu :**
+
+- Format : 1080×1920 (9:16 vertical)
+- Codec : H.264 (CRF 12, yuv420p, BT.709)
+- Audio : AAC 320 kbps 48 kHz, `+faststart`, voix ~−14 LUFS
+
+> Les deux fichiers sont fournis à titre d'exemple dans le dépôt. Ce ne sont pas des sorties des scripts du skill : ce sont des références pour voir le rendu attendu.
 
 ---
 
