@@ -11,13 +11,13 @@
 
 ## Sommaire
 
-1. [Ce que fait le skill](#1-ce-que-fait-le-skill)
+14: 1. [Ce que fait le skill](#1-ce-que-fait-le-skill)
+    - [Démo (avant/après)](#demo-avantaprès)
 2. [Comment ça marche](#2-comment-ça-marche)
 3. [Prérequis](#3-prérequis)
 4. [Installer le skill](#4-installer-le-skill)
 5. [Installer les MCP utilisés par le skill](#5-installer-les-mcp-utilisés-par-le-skill)
 6. [Utilisation complète](#6-utilisation-complète)
-Démo. [Démo (avant/après)](#demo-avantaprès)
 7. [Structure du dépôt](#7-structure-du-dépôt)
 8. [Sources gratuites, licences et attribution](#8-sources-gratuites-licences-et-attribution)
 9. [Dépannage](#9-dépannage)
@@ -43,6 +43,32 @@ Démo. [Démo (avant/après)](#demo-avantaprès)
 **Look par défaut :** éditorial et rapide — Anton + Didot (substitués par Playfair Display sur Windows), palette rouge / blanc / noir et blanc, gros mots kinétiques, inserts B-roll, splits avec le présentateur, grain et vignette.
 
 > Le skill est **gratuit par défaut** : aucune génération d'image payante, aucun crédit. Un appendice optionnel (Higgsfield / Seedance) existe pour la génération IA, mais il n'est utilisé que si vous le demandez explicitement.
+
+---
+
+## Démo (avant/après)
+
+Voici un exemple concret de ce que le skill produit, à partir d'une vidéo source face caméra. Les deux vidéos ci-dessous sont lisibles directement sur cette page.
+
+### Avant — vidéo originale (source)
+
+<video controls width="100%" src="assets/demos/original.mp4"></video>
+
+[`Télécharger original.mp4`](assets/demos/original.mp4) (4,5 Mo)
+
+### Après — résultat rendu par le skill
+
+<video controls width="100%" src="assets/demos/result.mp4"></video>
+
+[`Télécharger result.mp4`](assets/demos/result.mp4) (22 Mo)
+
+**Spécifications du rendu :**
+
+- Format : 1080×1920 (9:16 vertical)
+- Codec : H.264 (CRF 12, yuv420p, BT.709)
+- Audio : AAC 320 kbps 48 kHz, `+faststart`, voix ~−14 LUFS
+
+> Les deux fichiers sont fournis à titre d'exemple dans le dépôt. Ce ne sont pas des sorties des scripts du skill : ce sont des références pour voir le rendu attendu.
 
 ---
 
@@ -556,25 +582,6 @@ DIR/
 
 ---
 
-## Démo (avant/après)
-
-Voici un exemple concret de ce que le skill produit, à partir d'une vidéo source face caméra.
-
-| | Fichier | Description |
-|---|---|---|
-| **Avant (source)** | [`assets/demos/original.mp4`](assets/demos/original.mp4) | Vidéo originale brute (face caméra, pauses et hésitations incluses) |
-| **Après (skill)** | [`assets/demos/result.mp4`](assets/demos/result.mp4) | Reel 9:16 rendu par le skill : pauses coupées, sous-titres kinétiques, B-roll, splits, audio masterisé à −14 LUFS |
-
-**Spécifications du rendu :**
-
-- Format : 1080×1920 (9:16 vertical)
-- Codec : H.264 (CRF 12, yuv420p, BT.709)
-- Audio : AAC 320 kbps 48 kHz, `+faststart`, voix ~−14 LUFS
-
-> Les deux fichiers sont fournis à titre d'exemple dans le dépôt. Ce ne sont pas des sorties des scripts du skill : ce sont des références pour voir le rendu attendu.
-
----
-
 ## 7. Structure du dépôt
 
 ```text
@@ -585,6 +592,7 @@ talking-head-reels/
 ├── THIRD_PARTY.md               # licences des composants tiers
 ├── .gitignore
 ├── assets/
+│   ├── demos/                   # vidéos de démo (avant/après)
 │   ├── examples/example_edl.json
 │   ├── fonts/                   # Anton (OFL) + OFL.txt
 │   ├── fonts/win/               # Playfair Display + Inter (OFL)
